@@ -87,6 +87,8 @@ extern "C"
 // initialize all motors and pneumatics
 
 extern pros::Motor Intake;
+extern pros::Motor Intake2;
+
 extern pros::Motor FlyWheel;
 extern pros::ADIDigitalOut IntakePu1;
 extern pros::ADIDigitalOut IntakePu2;

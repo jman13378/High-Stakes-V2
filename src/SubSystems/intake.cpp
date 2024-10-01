@@ -6,6 +6,8 @@ bool overrideIntake = false;
 void setIntake(int power)
 {
     Intake.move(power);
+    Intake2.move(power);
+
 }
 bool isTriBall(pros::Optical op)
 {

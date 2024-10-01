@@ -17,10 +17,10 @@ void initialize()
     arms::init();
     arms::selector::destroy();
     selector::init(-2);
-    while ((*arms::odom::imu).is_calibrating())
-    {
-        pros::delay(10);
-    }
+    // while ((*arms::odom::imu).is_calibrating())
+    // {
+    //     pros::delay(10);
+    // }
     std::cout << "init2" << std::endl;
 }
 

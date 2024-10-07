@@ -48,7 +48,6 @@ void autonomous()
     std::cout << "auton1" << std::endl;
 
     selector::shutdown();
-    IntakeOut = true;
     printf(mapper.str().c_str());
     selector::runauton();
     //  selector::runauton();
@@ -61,11 +60,7 @@ void autonomous()
 
 void opcontrol()
 {
-    std::cout << "op1" << std::endl;
 
-        std::cout << "Hello, World!" << FlyWheelPower << std::endl;
-
-    IntakeOut = true;
     arms::odom::reset({0, 0}, 0);
     // arms::chassis::move({0, 0, 0}, 100, 0.25);
     arms::chassis::setBrakeMode(pros::E_MOTOR_BRAKE_COAST);
@@ -73,7 +68,6 @@ void opcontrol()
     {
         
         selector::debugRuns();
-        setFlyWheelMotors();
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();

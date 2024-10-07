@@ -120,7 +120,7 @@ namespace selector
 	void othertempinfo()
 	{
 		double IntakeT = Intake.get_temperature();
-		double flywheel = FlyWheel.get_temperature();
+		double flywheel = 121;
 
 		std::stringstream ss;
 

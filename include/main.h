@@ -89,13 +89,7 @@ extern "C"
 extern pros::Motor Intake;
 extern pros::Motor Intake2;
 
-extern pros::Motor FlyWheel;
-extern pros::ADIDigitalOut IntakePu1;
-extern pros::ADIDigitalOut IntakePu2;
-extern pros::ADIDigitalOut WingPu1;
-extern pros::ADIDigitalOut WingPu2;
-extern pros::ADIDigitalIn FreezeTag1;
-extern pros::ADIDigitalIn FreezeTag2;
+extern pros::ADIDigitalOut ClampPiston;
 
 /// initialize all variables
 
@@ -112,27 +106,18 @@ extern pros::Controller controller;
 extern pros::Controller controller2;
 
 // initialize functions
-void setFlyWheelMotors();
 void setDriveMotors();
 void setIntakeMotor();
 void setIntake(int power);
 bool isTriBall(pros::Optical op);
 void setPistonStates();
-void setIntakePiston(bool trigger);
-void setWingPiston(bool trigger);
-void setEndGamePiston(bool trigger);
-int cataControl();
-int FreezeTag();
+void setClampPiston(bool trigger);
+
 
 extern pros::Motor IntakeStartMotor;
 extern bool Disabled;
-extern int timespressed;
-extern int FlyWheelPower;
-extern bool shoot;
-extern bool IntakeOut;
-extern bool EndGameOut;
-extern pros::ADIDigitalIn CataBumper;
 extern bool DriveReverse;
+extern bool ClampOut;
 // initialize namespaces
 
 namespace autons
@@ -151,11 +136,8 @@ namespace controls
     extern pros::controller_digital_e_t intakeOut;
     extern pros::controller_digital_e_t intakePnu;
     extern pros::controller_digital_e_t tankswitch;
-    extern pros::controller_digital_e_t FlyWheel70;
-    extern pros::controller_digital_e_t FlyWheel100;
 
-    extern pros::controller_digital_e_t cata;
-    extern pros::controller_digital_e_t wings;
+    extern pros::controller_digital_e_t clampPiston;
     extern pros::controller_digital_e_t intakeOverride;
 
     extern pros::controller_digital_e_t driveSwitch;

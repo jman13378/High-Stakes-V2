@@ -7,13 +7,9 @@ namespace controls
 {
         pros::controller_digital_e_t intakeIn = pros::E_CONTROLLER_DIGITAL_L1;
         pros::controller_digital_e_t intakeOut = pros::E_CONTROLLER_DIGITAL_L2;
-        pros::controller_digital_e_t intakePnu = pros::E_CONTROLLER_DIGITAL_R1;
         pros::controller_digital_e_t tankswitch = pros::E_CONTROLLER_DIGITAL_UP;
-        pros::controller_digital_e_t FlyWheel70 = pros::E_CONTROLLER_DIGITAL_X;
-        pros::controller_digital_e_t FlyWheel100 = pros::E_CONTROLLER_DIGITAL_A;
 
-        pros::controller_digital_e_t cata = pros::E_CONTROLLER_DIGITAL_RIGHT;
-        pros::controller_digital_e_t wings = pros::E_CONTROLLER_DIGITAL_B;
+        pros::controller_digital_e_t clampPiston = pros::E_CONTROLLER_DIGITAL_B;
         pros::controller_digital_e_t intakeOverride = pros::E_CONTROLLER_DIGITAL_DOWN;
         pros::controller_digital_e_t driveSwitch = pros::E_CONTROLLER_DIGITAL_Y;
 
@@ -48,9 +44,10 @@ int hueRange[3][2] = {{100, 80}, {145769, 145769}};
 
 pros::Optical IntakeOpticalIn(2);
 pros::Optical IntakeOpticalIn2(15);
-
 pros::Optical IntakeOpticalOut(3);
-pros::Distance SkillsDistance(12);                                  
+
+pros::ADIDigitalOut ClampPiston('H');
+
 
 pros::Motor Intake(7, pros::E_MOTOR_GEAR_GREEN, true, pros::E_MOTOR_ENCODER_ROTATIONS);
 pros::Motor Intake2(6, pros::E_MOTOR_GEAR_GREEN, false, pros::E_MOTOR_ENCODER_ROTATIONS);
@@ -59,5 +56,6 @@ pros::Motor Intake2(6, pros::E_MOTOR_GEAR_GREEN, false, pros::E_MOTOR_ENCODER_RO
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
 pros::Controller controller2(pros::E_CONTROLLER_PARTNER);
 bool DriveReverse = false;
+bool ClampOut = false;
 
 

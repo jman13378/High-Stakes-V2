@@ -108,6 +108,7 @@ extern pros::Controller controller2;
 // initialize functions
 void setDriveMotors();
 void setIntakeMotor();
+void setIntake(int power,int power2);
 void setIntake(int power);
 bool isTriBall(pros::Optical op);
 void setPistonStates();

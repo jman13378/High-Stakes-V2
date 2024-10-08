@@ -42,9 +42,7 @@ Robot Brain. The 3-wire ports may not be used to control motors of any kind.
 
 int hueRange[3][2] = {{100, 80}, {145769, 145769}};
 
-pros::Optical IntakeOpticalIn(2);
-pros::Optical IntakeOpticalIn2(15);
-pros::Optical IntakeOpticalOut(3);
+pros::Optical IntakeOpticalIn(3);
 
 pros::ADIDigitalOut ClampPiston('H');
 

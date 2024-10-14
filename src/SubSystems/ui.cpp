@@ -209,7 +209,7 @@ namespace selector
 
 		else if (auton == -2)
 			autons::blueRightStart();
-	}
+	} 
 
 	void shutdown()
 	{

@@ -7,7 +7,7 @@
 #include <string>
 std::stringstream mapper("t");
 
-bool debug = true;
+bool debug = false;
 void initialize()
 {
     // pros::Task Flywheelcontrol(FlyWheelControlTask);
@@ -23,7 +23,13 @@ void initialize()
     // }
     std::cout << "init2" << std::endl;
 }
+void runDebug() {
 
+while (true) {
+if (controller.get_digital_new_press(controls::clampPiston)) {
+    std::cout << "x: " << arms::odom::getPosition().x << "\ny: " << arms::odom::getPosition().y << std::endl;
+}
+}}
 /**
  * Runs while the robot is in the disabled state of Field Management System or
  * the VEX Competition Switch, following either autonomous or opcontrol. When
@@ -60,7 +66,9 @@ void autonomous()
 
 void opcontrol()
 {
-
+    if (debug) {
+        runDebug();
+    }
     arms::odom::reset({0, 0}, 0);
     // arms::chassis::move({0, 0, 0}, 100, 0.25);
     arms::chassis::setBrakeMode(pros::E_MOTOR_BRAKE_COAST);

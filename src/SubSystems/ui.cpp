@@ -120,11 +120,11 @@ namespace selector
 	void othertempinfo()
 	{
 		double IntakeT = Intake.get_temperature();
-		double flywheel = 121;
+		double IntakeT2 = Intake2.get_temperature();
 
 		std::stringstream ss;
 
-		ss << "Intake Temp: " << IntakeT << "\nFlyWheel: " << flywheel;
+		ss << "Intake Temp: " << IntakeT << "\nIntake2 Temp: " << IntakeT2;
 
 		auto temp = ss.str();
 
@@ -137,13 +137,16 @@ namespace selector
 	void drivetempinfo()
 	{
 		double LFT = (*arms::chassis::leftMotors)[0].get_temperature();
-		double LBT = (*arms::chassis::leftMotors)[1].get_temperature();
+		double LMT = (*arms::chassis::leftMotors)[1].get_temperature();
+		double LBT = (*arms::chassis::leftMotors)[2].get_temperature();
+
 		double RFT = (*arms::chassis::rightMotors)[0].get_temperature();
-		double RBT = (*arms::chassis::rightMotors)[1].get_temperature();
+		double RMT = (*arms::chassis::rightMotors)[1].get_temperature();
+		double RBT = (*arms::chassis::rightMotors)[2].get_temperature();
 
 		std::stringstream ss;
 
-		ss << "Left Front Temp: " << LFT << "\nLeft Back Temp: " << LBT << "\nRight Front Temp: " << RFT << "\nRight Back Temp: " << RBT;
+		ss << "Left Front Temp: " << LFT << "\nLeft Middle Temp: " << LMT << "\nLeft Back Temp: " << LBT << "\nRight Front Temp: " <<RFT<< "\nRight Middle Temp: " << RMT << "\nRight Back Temp: " << RBT;
 
 		auto temp = ss.str();
 

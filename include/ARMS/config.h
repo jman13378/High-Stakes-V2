@@ -45,6 +45,7 @@ namespace arms {
 #define MIN_ERROR 5          // Minimum distance to target before angular componenet is disabled
 #define LEAD_PCT .6			 // Go-to-pose lead distance ratio (0-1)
 
+
 // Auton selector configuration constants
 //#define AUTONS "Front", "Back", "Do Nothing" // Names of autonomis, up to 10
 //#define HUE 0     // Color of theme from 0-359(H part of HSV)

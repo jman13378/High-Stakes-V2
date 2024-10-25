@@ -24,9 +24,9 @@ namespace autons
         setIntake(0);
         arms::odom::reset({0, 0}, 0); // Reset point
 
-        // arms::chassis::move({24, 0}, 100, 0.250);
+        arms::chassis::move({48, 0}, 100, 0.250);
 
-        arms::chassis::move({cTI(4.8),0,0},50,.25);
+        //arms::chassis::move({cTI(4.8),0,0},50,.25);
       //  arms::chassis::turn(90);
     }
 

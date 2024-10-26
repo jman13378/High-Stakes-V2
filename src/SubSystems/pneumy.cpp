@@ -25,5 +25,5 @@ void setPistonStates()
 
 
     setClampPiston(ClampOut);
-    setIntakePiston(IntakeOut)
+    setIntakePiston(IntakeOut);
 }

@@ -50,7 +50,7 @@ void competition_initialize() {}
 
 void autonomous()
 {
-    
+    IntakeOut=true;
     std::cout << "auton1" << std::endl;
 
     selector::shutdown();
@@ -66,6 +66,8 @@ void autonomous()
 
 void opcontrol()
 {
+    IntakeOut=true;
+
     if (debug) {
         runDebug();
     }
@@ -79,7 +81,6 @@ void opcontrol()
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();
-        //FreezeTag();
         pros::delay(10);
         
     }

@@ -47,6 +47,8 @@ pros::Optical IntakeOpticalIn2(19);
 
 pros::Optical IntakeOpticalOut(20);
 pros::ADIDigitalOut ClampPiston('H');
+pros::ADIDigitalOut IntakePiston('G');
+pros::ADIDigitalOut IntakePiston2('F');
 
 
 pros::Motor Intake(7, pros::E_MOTOR_GEAR_GREEN, true, pros::E_MOTOR_ENCODER_ROTATIONS);
@@ -57,5 +59,6 @@ pros::Controller controller(pros::E_CONTROLLER_MASTER);
 pros::Controller controller2(pros::E_CONTROLLER_PARTNER);
 bool DriveReverse = false;
 bool ClampOut = false;
+bool IntakeOut = false;
 
 

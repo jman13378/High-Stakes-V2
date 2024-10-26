@@ -18,13 +18,13 @@ namespace autons
 
     void blueRightStart()
     {
-        setBlueHue();
-        setIntake(127);
-        pros::delay(500);
-        setIntake(0);
-        arms::odom::reset({0, 0}, 0); // Reset point
+        // setBlueHue();
+        // setIntake(127);
+        // pros::delay(500);
+        // setIntake(0);
+        // arms::odom::reset({0, 0}, 0); // Reset point
 
-        arms::chassis::move({48, 0}, 100, 0.250);
+        // arms::chassis::move({48, 0}, 100, 0.250);
 
         //arms::chassis::move({cTI(4.8),0,0},50,.25);
       //  arms::chassis::turn(90);

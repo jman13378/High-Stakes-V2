@@ -90,12 +90,13 @@ extern pros::Motor Intake;
 extern pros::Motor Intake2;
 
 extern pros::ADIDigitalOut ClampPiston;
-
+extern pros::ADIDigitalOut IntakePiston;
+extern pros::ADIDigitalOut IntakePiston2;
 /// initialize all variables
 
 extern int hueRange[3][2];
 extern bool debug;
-extern bool WingsOut;
+extern bool IntakeOut;
 extern bool overrideIntake;
 extern pros::Optical IntakeOpticalIn;
 extern pros::Optical IntakeOpticalIn2;
@@ -135,7 +136,6 @@ namespace controls
 {
     extern pros::controller_digital_e_t intakeIn;
     extern pros::controller_digital_e_t intakeOut;
-    extern pros::controller_digital_e_t intakePnu;
     extern pros::controller_digital_e_t tankswitch;
 
     extern pros::controller_digital_e_t clampPiston;

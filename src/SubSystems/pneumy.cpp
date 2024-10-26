@@ -8,7 +8,12 @@ void setClampPiston(bool trigger)
 {
     ClampPiston.set_value(trigger);
 }
+void setIntakePiston(bool trigger)
+{
+    IntakePiston.set_value(trigger);
+    IntakePiston2.set_value(trigger);
 
+}
 void setPistonStates()
 {
     if (controller.get_digital_new_press(controls::clampPiston))
@@ -20,4 +25,5 @@ void setPistonStates()
 
 
     setClampPiston(ClampOut);
+    setIntakePiston(IntakeOut)
 }

@@ -10,11 +10,13 @@ namespace arms {
 #define ODOM_DEBUG 0
 
 // Negative numbers mean reversed motor
-#define LEFT_MOTORS -8,-9,10 /*14 , 7*/// clawbot (freezetag)
-#define RIGHT_MOTORS 4,5,-2 /*-9,-10*/// clawbot (freezetag)
+#define LEFT_MOTORS -8,-9 
+#define RIGHT_MOTORS 4,5
 #define GEARSET pros::E_MOTOR_GEAR_600 // RPM of chassis motors
 
 // Ticks per inch
+// Start the robot at a TPI of 1 then move the robot a known number of inches 
+// Set the TPI to (Original TPI (1)) * (the x or y position after moving the bot a known number of inches (1172.85)) / (known number of inches)
 #define TPI 1*1172.85 / 24     			  // Encoder ticks per inch of forward robot movement
 #define MIDDLE_TPI 1          // Ticks per inch for the middle wheel
 
@@ -30,18 +32,23 @@ namespace arms {
  
 // Movement tuning
 #define SLEW_STEP 8          // Smaller number = more slew
-#define LINEAR_EXIT_ERROR 1  // default exit distance for linear movements
-#define ANGULAR_EXIT_ERROR 1 // default exit distance for angular movements
+#define LINEAR_EXIT_ERROR .25  // default exit distance for linear movements
+#define ANGULAR_EXIT_ERROR .25 // default exit distance for angular movements
 #define SETTLE_THRESH_LINEAR .5      // amount of linear movement for settling
 #define SETTLE_THRESH_ANGULAR 1      // amount of angular movement for settling
 #define SETTLE_TIME 250      // amount of time to count as settled
-#define LINEAR_KP 10
+/*
+* 1) Slowly increase kP till the robot overshoots the known target
+* 2) Slowly increase kD till the robot reaches the known target 
+* 3) Increase kI to increase accuracy 
+*/
+#define LINEAR_KP 4
 #define LINEAR_KI 0
 #define LINEAR_KD 0
 #define TRACKING_KP 60		 // point tracking turning strength
-#define ANGULAR_KP 	1
-#define ANGULAR_KI 0
-#define ANGULAR_KD 0
+#define ANGULAR_KP 	2
+#define ANGULAR_KI 0.05
+#define ANGULAR_KD 10.75
 #define MIN_ERROR 5          // Minimum distance to target before angular componenet is disabled
 #define LEAD_PCT .6			 // Go-to-pose lead distance ratio (0-1)
 

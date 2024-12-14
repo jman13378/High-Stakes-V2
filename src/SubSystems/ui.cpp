@@ -146,7 +146,7 @@ namespace selector
 
 		std::stringstream ss;
 
-		ss << "Left Front Temp: " << LFT << "\nLeft Middle Temp: " << LMT << "\nLeft Back Temp: " << LBT << "\nRight Front Temp: " <<RFT<< "\nRight Middle Temp: " << RMT << "\nRight Back Temp: " << RBT;
+		ss << "Left Front Temp: " << LFT << "\nLeft Middle Temp: " << LMT << "\nLeft Back Temp: " << LBT << "\nRight Front Temp: " << RFT << "\nRight Middle Temp: " << RMT << "\nRight Back Temp: " << RBT;
 
 		auto temp = ss.str();
 
@@ -193,6 +193,7 @@ namespace selector
 
 	void runauton()
 	{
+		std::cout << "Running Auton " << auton << std::endl;
 		if (auton == -1 || auton == -2)
 			autons::setBlueHue();
 		else if (auton == 2 || auton == 1)
@@ -212,7 +213,7 @@ namespace selector
 
 		else if (auton == -2)
 			autons::blueRightStart();
-	} 
+	}
 
 	void shutdown()
 	{

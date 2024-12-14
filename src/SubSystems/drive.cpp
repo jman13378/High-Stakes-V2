@@ -28,7 +28,7 @@ void setDriveMotors()
     }
 
     bool tank = true;
-
+ 
     // Tank
     // double leftJoyStick = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
     // double rightJoyStick = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
@@ -66,7 +66,7 @@ void setDriveMotors()
 
     if (controller.get_digital_new_press(controls::driveSwitch))
         DriveReverse = !DriveReverse;
-    std::cout << "x: " << DriveReverse << std::endl;
+    //std::cout << "x: " << DriveReverse << std::endl;
 
     // Tank
     // arms::chassis::tank(percentPowerL, percentPowerR);

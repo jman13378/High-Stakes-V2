@@ -4,8 +4,9 @@
 #include <string>
 namespace autons
 {
-    double cTI(int tiles) {
-        return 24*tiles;
+    double cTI(int tiles)
+    {
+        return 24 * tiles;
     }
     void setBlueHue()
     {
@@ -22,12 +23,14 @@ namespace autons
         // setIntake(127);
         // pros::delay(500);
         // setIntake(0);
-        // arms::odom::reset({0, 0}, 0); // Reset point
+        arms::odom::reset({0, 0}, 0); // Reset point
 
-        // arms::chassis::move({48, 0}, 100, 0.250);
-
-        //arms::chassis::move({cTI(4.8),0,0},50,.25);
-      //  arms::chassis::turn(90);
+        arms::chassis::move({48, 0}, 100, 0.250);
+        // arms::chassis::turn(90, 100);
+        // arms::chassis::move({48, 24, 90}, 100, 0.250);
+        // arms::chassis::turn(180, 100);
+        // arms::chassis::move({48, 48, 180}, 100, 0.250);
+        // arms::chassis::move({0, 0, 0}, 100, 0.250);
     }
 
     void blueLeftStart()

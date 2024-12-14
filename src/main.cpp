@@ -5,7 +5,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-std::stringstream mapper("t");
 
 bool debug = false;
 void initialize()
@@ -13,7 +12,7 @@ void initialize()
     // pros::Task Flywheelcontrol(FlyWheelControlTask);
 
     // pros::Task CataController(cataControl);
-    std::cout << "init1" << std::endl;
+    std::cout << "Pre Initialize" << std::endl;
     arms::init();
     arms::selector::destroy();
     selector::init(-2);
@@ -21,15 +20,21 @@ void initialize()
     // {
     //     pros::delay(10);
     // }
-    std::cout << "init2" << std::endl;
+    std::cout << "Post Initialize" << std::endl;
 }
-void runDebug() {
 
-while (true) {
-if (controller.get_digital_new_press(controls::clampPiston)) {
-    std::cout << "x: " << arms::odom::getPosition().x << "\ny: " << arms::odom::getPosition().y << std::endl;
+void runDebug()
+{
+            std::cout << "Running Debug" << std::endl;
+
+    while (true)
+    {
+        if (controller.get_digital_new_press(controls::clampPiston))
+        {
+            std::cout << "x: " << arms::odom::getPosition().x << "\ny: " << arms::odom::getPosition().y << std::endl;
+        }
+    }
 }
-}}
 /**
  * Runs while the robot is in the disabled state of Field Management System or
  * the VEX Competition Switch, following either autonomous or opcontrol. When
@@ -50,12 +55,14 @@ void competition_initialize() {}
 
 void autonomous()
 {
-    IntakeOut=true;
-    std::cout << "auton1" << std::endl;
+    std::cout << "Pre Autonomous" << std::endl;
+
+    IntakeOut = true;
 
     selector::shutdown();
-    printf(mapper.str().c_str());
     selector::runauton();
+    std::cout << "Post Autonomous" << std::endl;
+
     //  selector::runauton();
 
     // if (au)
@@ -66,9 +73,12 @@ void autonomous()
 
 void opcontrol()
 {
-    IntakeOut=true;
+    std::cout << "Pre Driver Control" << std::endl;
 
-    if (debug) {
+    IntakeOut = true;
+
+    if (debug)
+    {
         runDebug();
     }
     arms::odom::reset({0, 0}, 0);
@@ -76,12 +86,12 @@ void opcontrol()
     arms::chassis::setBrakeMode(pros::E_MOTOR_BRAKE_COAST);
     while (true)
     {
-        
+
         selector::debugRuns();
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();
         pros::delay(10);
-        
     }
+    std::cout << "Post Driver Control" << std::endl;
 }

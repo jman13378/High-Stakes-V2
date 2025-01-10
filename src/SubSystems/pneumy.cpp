@@ -8,10 +8,9 @@ void setClampPiston(bool trigger)
 {
     ClampPiston.set_value(trigger);
 }
-void setIntakePiston(bool trigger)
+void setWingPiston(bool trigger)
 {
-    IntakePiston.set_value(trigger);
-    IntakePiston2.set_value(trigger);
+    WingPiston.set_value(trigger);
 
 }
 void setPistonStates()
@@ -20,10 +19,13 @@ void setPistonStates()
     {
         ClampOut = ClampOut ? false : true;
     }
-
+    if (controller.get_digital_new_press(controls::wingPiston))
+    {
+        WingOut = WingOut ? false : true;
+    }
 
 
 
     setClampPiston(ClampOut);
-    setIntakePiston(IntakeOut);
+    setWingPiston(WingOut);
 }

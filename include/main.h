@@ -90,8 +90,7 @@ extern pros::Motor Intake;
 extern pros::Motor Intake2;
 
 extern pros::ADIDigitalOut ClampPiston;
-extern pros::ADIDigitalOut IntakePiston;
-extern pros::ADIDigitalOut IntakePiston2;
+extern pros::ADIDigitalOut WingPiston;
 /// initialize all variables
 
 extern int hueRange[3][2];
@@ -109,17 +108,19 @@ extern pros::Controller controller2;
 // initialize functions
 void setDriveMotors();
 void setIntakeMotor();
-void setIntake(int power,int power2);
+void setIntake(int power, int power2);
 void setIntake(int power);
 bool isTriBall(pros::Optical op);
 void setPistonStates();
 void setClampPiston(bool trigger);
-
+void setWibngPiston(bool trigger);
 
 extern pros::Motor IntakeStartMotor;
 extern bool Disabled;
 extern bool DriveReverse;
 extern bool ClampOut;
+extern bool WingOut;
+
 // initialize namespaces
 
 namespace autons
@@ -139,6 +140,7 @@ namespace controls
     extern pros::controller_digital_e_t tankswitch;
 
     extern pros::controller_digital_e_t clampPiston;
+    extern pros::controller_digital_e_t wingPiston;
     extern pros::controller_digital_e_t intakeOverride;
 
     extern pros::controller_digital_e_t driveSwitch;

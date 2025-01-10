@@ -10,7 +10,9 @@ namespace controls
         pros::controller_digital_e_t tankswitch = pros::E_CONTROLLER_DIGITAL_UP;
 
         pros::controller_digital_e_t clampPiston = pros::E_CONTROLLER_DIGITAL_B;
+        pros::controller_digital_e_t wingPiston = pros::E_CONTROLLER_DIGITAL_LEFT;
         pros::controller_digital_e_t intakeOverride = pros::E_CONTROLLER_DIGITAL_DOWN;
+
         pros::controller_digital_e_t driveSwitch = pros::E_CONTROLLER_DIGITAL_Y;
 
 }
@@ -22,8 +24,7 @@ namespace controls
 */
 
 /*
-<R12> Motors are limited. Robots may use any combination of VEX V5 Smart Motors (11W) (276-
-4840) and V5 Smart Motors (5.5W) (276-4842), within the following criteria:
+<R12> Motors are limited. Robots may use any combination of VEX V5 Smart Motors (11W) (276- 
         a. The combined power of all motors (11W & 5.5W) must not exceed 88W.
         b. V5 Smart Motors, connected to Smart Ports, are the only motors that may be used with a V5
 Robot Brain. The 3-wire ports may not be used to control motors of any kind.
@@ -47,8 +48,7 @@ pros::Optical IntakeOpticalIn2(19);
 
 pros::Optical IntakeOpticalOut(20);
 pros::ADIDigitalOut ClampPiston('H');
-pros::ADIDigitalOut IntakePiston('G');
-pros::ADIDigitalOut IntakePiston2('F');
+pros::ADIDigitalOut WingPiston('G');
 
 
 pros::Motor Intake(7, pros::E_MOTOR_GEAR_GREEN, true, pros::E_MOTOR_ENCODER_ROTATIONS);
@@ -60,5 +60,25 @@ pros::Controller controller2(pros::E_CONTROLLER_PARTNER);
 bool DriveReverse = false;
 bool ClampOut = false;
 bool IntakeOut = false;
+bool WingOut = false;0.............................................................................................................................................................................................................................................................................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.........................................0
 
 

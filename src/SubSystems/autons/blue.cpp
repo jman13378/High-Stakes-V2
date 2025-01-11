@@ -25,7 +25,12 @@ namespace autons
         // setIntake(0);
         arms::odom::reset({0, 0}, 0); // Reset point
 
-        arms::chassis::move({48, 0}, 100, 0.250);
+        arms::chassis::move({-44, 0}, 100, 0.250, arms::REVERSE);
+        pros::delay(500);
+        ClampOut = true;
+        setClampPiston(ClampOut);
+        pros::delay(500);
+        setIntake(127);
         // arms::chassis::turn(90, 100);
         // arms::chassis::move({48, 24, 90}, 100, 0.250);
         // arms::chassis::turn(180, 100);

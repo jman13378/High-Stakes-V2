@@ -1,11 +1,11 @@
 #include "main.h"
-
+#include <list>
 double percentPowerL = 100;
 double percentPowerR = 100;
 double lastTime = pros::millis();
 double setPowerL = 0;
 double setPowerR = 0;
-bool tankswitch = false;
+
 int sign(double x)
 {
     if (x > 0)
@@ -28,7 +28,7 @@ void setDriveMotors()
     }
 
     bool tank = true;
- 
+
     // Tank
     // double leftJoyStick = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
     // double rightJoyStick = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
@@ -66,14 +66,12 @@ void setDriveMotors()
 
     if (controller.get_digital_new_press(controls::driveSwitch))
         DriveReverse = !DriveReverse;
-    //std::cout << "x: " << DriveReverse << std::endl;
+    // std::cout << "x: " << DriveReverse << std::endl;
 
     // Tank
     // arms::chassis::tank(percentPowerL, percentPowerR);
     percentPowerL = (DriveReverse ? -percentPowerL : percentPowerL);
     percentPowerR = (DriveReverse ? percentPowerR : percentPowerR);
-
-    controller.print(0, 0, "Drive: %s, IO: %s", (DriveReverse ? "Reverse" : "Forward"), (overrideIntake ? "yes" : "no "));
 
     // controller.print(0, 0, "Drive: %s", (WingsOut ? "Reverse" : "Forward"));
 

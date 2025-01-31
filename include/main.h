@@ -120,7 +120,7 @@ extern bool Disabled;
 extern bool DriveReverse;
 extern bool ClampOut;
 extern bool WingOut;
-
+extern bool tankswitch;
 // initialize namespaces
 
 namespace autons

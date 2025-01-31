@@ -31,6 +31,9 @@ namespace autons
         setClampPiston(ClampOut);
         pros::delay(500);
         setIntake(127);
+        pros::delay(500);
+        setIntake(0);
+        arms::chassis::move({-38, -29, 0}, 100, 0.25, arms::REVERSE);
         // arms::chassis::turn(90, 100);
         // arms::chassis::move({48, 24, 90}, 100, 0.250);
         // arms::chassis::turn(180, 100);

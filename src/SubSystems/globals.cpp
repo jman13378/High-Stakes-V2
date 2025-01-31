@@ -51,8 +51,8 @@ pros::ADIDigitalOut ClampPiston('H');
 pros::ADIDigitalOut WingPiston('G');
 
 
-pros::Motor Intake(7, pros::E_MOTOR_GEAR_GREEN, true, pros::E_MOTOR_ENCODER_ROTATIONS);
-pros::Motor Intake2(6, pros::E_MOTOR_GEAR_GREEN, false, pros::E_MOTOR_ENCODER_ROTATIONS);
+pros::Motor Intake(12, pros::E_MOTOR_GEAR_BLUE, true, pros::E_MOTOR_ENCODER_ROTATIONS);
+pros::Motor Intake2(6, pros::E_MOTOR_GEAR_BLUE, false, pros::E_MOTOR_ENCODER_ROTATIONS);
 
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
@@ -61,3 +61,4 @@ bool DriveReverse = false;
 bool ClampOut = false;
 bool IntakeOut = false;
 bool WingOut = false;
+bool tankswitch = false;

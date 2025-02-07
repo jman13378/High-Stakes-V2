@@ -17,9 +17,9 @@ if (%conf%=="") SET /A conf="y"
 
 if (%conf%=="y") CALL :Callback
 if %input%==1 CALL :gitadd
-if %input%==2 CALL :gitcommit
-if %input%==3 CALL :gitpush
-if %input%==4 CALL :gitadd
+if else %input%==2 CALL :gitcommit
+if else %input%==3 CALL :gitpush
+if else %input%==4 CALL :gitadd
 
 
 EXIT

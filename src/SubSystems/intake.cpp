@@ -1,7 +1,6 @@
 #include "main.h"
 
 bool overrideIntake = false;
-//     Intake.move((127*controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2))-(127*controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)));
 
 void setIntake(int power,int power2)
 {

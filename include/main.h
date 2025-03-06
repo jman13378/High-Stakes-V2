@@ -86,8 +86,8 @@ extern "C"
 
 // initialize all motors and pneumatics
 
-extern pros::Motor Intake;
-extern pros::Motor Intake2;
+extern pros::Motor IntakeHigh;
+extern pros::Motor IntakeLow;
 
 extern pros::ADIDigitalOut ClampPiston;
 extern pros::ADIDigitalOut WingPiston;
@@ -115,7 +115,6 @@ void setPistonStates();
 void setClampPiston(bool trigger);
 void setWibngPiston(bool trigger);
 
-extern pros::Motor IntakeStartMotor;
 extern bool Disabled;
 extern bool DriveReverse;
 extern bool ClampOut;

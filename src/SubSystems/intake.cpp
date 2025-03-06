@@ -4,14 +4,14 @@ bool overrideIntake = false;
 
 void setIntake(int power,int power2)
 {
-    Intake.move(power);
-    Intake2.move(power2);
+    IntakeLow.move(power);
+    IntakeHigh.move(power2);
 
 }
 void setIntake(int power)
 {
-    Intake.move(power);
-    Intake2.move(power);
+    IntakeLow.move(power);
+    IntakeHigh.move(power);
 
 }
 bool isTriBall(pros::Optical op)

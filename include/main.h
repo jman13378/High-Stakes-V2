@@ -84,28 +84,19 @@ extern "C"
 
 #include "ARMS/api.h"
 
-// initialize all motors and pneumatics
-
+// DEVICES
 extern pros::Motor IntakeHigh;
 extern pros::Motor IntakeLow;
-
 extern pros::ADIDigitalOut ClampPiston;
 extern pros::ADIDigitalOut WingPiston;
-/// initialize all variables
-
-extern int hueRange[3][2];
-extern bool debug;
-extern bool IntakeOut;
-extern bool overrideIntake;
 extern pros::Optical IntakeOpticalIn;
 extern pros::Optical IntakeOpticalIn2;
 extern pros::Optical IntakeOpticalOut;
 extern pros::Distance SkillsDistance;
-
 extern pros::Controller controller;
 extern pros::Controller controller2;
 
-// initialize functions
+// FUNCTIONS
 void setDriveMotors();
 void setIntakeMotor();
 void setIntake(int power, int power2);
@@ -115,13 +106,21 @@ void setPistonStates();
 void setClampPiston(bool trigger);
 void setWibngPiston(bool trigger);
 
+// VARIABLES
+extern int hueRange[3][2];
+extern bool debug;
+extern bool IntakeOut;
+extern bool overrideIntake;
 extern bool Disabled;
 extern bool DriveReverse;
 extern bool ClampOut;
 extern bool WingOut;
 extern bool tankswitch;
 // initialize namespaces
-
+namespace selector
+{
+    void runauton(int auton);
+}
 namespace autons
 {
     void redLeftStart();

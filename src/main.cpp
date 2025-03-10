@@ -140,7 +140,6 @@ void opcontrol()
     {
         pros::Task DriveInfo(task);
 
-        selector::debugRuns();
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();

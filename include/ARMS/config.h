@@ -10,8 +10,8 @@ namespace arms
 #define ODOM_DEBUG 0
 
 // Negative numbers mean reversed motor
-#define LEFT_MOTORS -8, -9, 11
-#define RIGHT_MOTORS 4, 5, -20
+#define LEFT_MOTORS -015,16, -17
+#define RIGHT_MOTORS 18, 19, -20
 #define GEARSET pros::E_MOTOR_GEAR_600 // RPM of chassis motors
 
 // Ticks per inch
@@ -25,7 +25,7 @@ namespace arms
 #define MIDDLE_DISTANCE 0 // Distance from middle wheel to the robot turning center
 
 // Sensors
-#define IMU_PORT 15								  // Port 0 for disabled
+#define IMU_PORT 21							  // Port 0 for disabled
 #define ENCODER_PORTS 0, 0, 0					  //-4,0,0                // Port 0 for disabled
 #define EXPANDER_PORT 0							  // Port 0 for disabled
 #define ENCODER_TYPE arms::odom::ENCODER_ROTATION // The type of encoders

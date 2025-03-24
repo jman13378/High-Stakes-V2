@@ -47,12 +47,12 @@ pros::Optical IntakeOpticalIn(3);
 pros::Optical IntakeOpticalIn2(19);
 
 pros::Optical IntakeOpticalOut(20);
-pros::ADIDigitalOut ClampPiston('H');
+pros::ADIDigitalOut ClampPiston('A');
 pros::ADIDigitalOut WingPiston('G');
 
 
-pros::Motor IntakeLow(13, pros::E_MOTOR_GEAR_GREEN, true, pros::E_MOTOR_ENCODER_ROTATIONS);
-pros::Motor IntakeHigh(14, pros::E_MOTOR_GEAR_BLUE, false, pros::E_MOTOR_ENCODER_ROTATIONS);
+pros::Motor IntakeLow(13, pros::E_MOTOR_GEAR_GREEN, false, pros::E_MOTOR_ENCODER_ROTATIONS);
+pros::Motor IntakeHigh(14, pros::E_MOTOR_GEAR_BLUE, true, pros::E_MOTOR_ENCODER_ROTATIONS);
 
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);

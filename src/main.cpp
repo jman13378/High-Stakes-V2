@@ -139,7 +139,7 @@ void opcontrol()
     while (true)
     {
         pros::Task DriveInfo(task);
-
+std::cout << ClampOut << std::endl;
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();

@@ -28,8 +28,8 @@ void setIntakeMotor()
     }
     bool isReverse = false;
     bool isForward = false;
-    int intakePower = 100 * (controller.get_digital(controls::intakeOut) - controller.get_digital(controls::intakeIn));
-    int intake2Power = 100 * (controller.get_digital(controls::intakeOut) - controller.get_digital(controls::intakeIn));
+    int intakePower = 127 * (controller.get_digital(controls::intakeOut) - controller.get_digital(controls::intakeIn));
+    int intake2Power = 127 * (controller.get_digital(controls::intakeOut) - controller.get_digital(controls::intakeIn));
 
     isReverse = (intakePower <= 0 ? false : true);
     isForward = (intakePower >= 0 ? false : true);

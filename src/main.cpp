@@ -104,7 +104,6 @@ void task()
     seconds %= 60;
 
     // Print the total duration in milliseconds (for debugging purposes)
-    std::cout << duration.count() << " ms" << std::endl;
 
     // Print the Drive Direction
     controller.print(0, 0, "Drive Dir: %s", (DriveReverse ? "Reverse" : "Forward"));
@@ -138,8 +137,12 @@ void opcontrol()
     arms::chassis::setBrakeMode(pros::E_MOTOR_BRAKE_COAST);
     while (true)
     {
+        if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X))
+        {
+            std::cout << "x: " << arms::odom::getPosition().x << "\ny: " << arms::odom::getPosition().y << std::endl;
+        }
+
         pros::Task DriveInfo(task);
-std::cout << ClampOut << std::endl;
         setDriveMotors();
         setIntakeMotor();
         setPistonStates();

@@ -21,7 +21,9 @@ void initialize()
     std::cout << "Pre Initialize" << std::endl;
     arms::init();
     arms::selector::destroy();
-    selector::init(-2);
+    //selector::init(-2); // auton
+    selector::init(0); // auton
+
     // while ((*arms::odom::imu).is_calibrating())
     // {
     //     pros::delay(10);

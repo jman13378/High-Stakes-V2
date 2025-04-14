@@ -1,0 +1,5 @@
+uploading
+
+- git add -A
+- git commit -m "[COMMIT MESSAGE]"
+- git push
